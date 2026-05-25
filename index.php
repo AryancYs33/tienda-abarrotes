@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['autenticado'])&&$_SESSION['autenticado']===true){header('Location:views/dashboard.php');exit();}
+if(isset($_SESSION['autenticado'])&&$_SESSION['autenticado']===true){header('Location:/views/dashboard.php');exit();}
 $error=$_SESSION['error_login']??'';unset($_SESSION['error_login']);
 ?>
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">

@@ -28,7 +28,7 @@ $menuItems=[
 ];
 ?>
 <!DOCTYPE html><html><head><meta charset="UTF-8"><title>Dashboard</title>
-<link rel="stylesheet" href="/tiendaAbarrotes/assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:#f5f7fa}

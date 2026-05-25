@@ -3,10 +3,10 @@ class Database {
     private static $instance = null;
     private $conexion;
     
-    private $host = 'localhost';
-    private $usuario = 'root';
-    private $clave = '';
-    private $base = 'tiendaAbarrotes';
+    private $host = 'sql103.infinityfree.com';
+    private $usuario = 'if0_42017989';
+    private $clave = 'VoqYcL7KNkeV';
+    private $base = 'if0_42017989_tienda'; 
     
     private function __construct() {
         try {
