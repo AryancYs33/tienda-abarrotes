@@ -48,7 +48,7 @@ class UsuarioController {
         */
 
         include __DIR__ .
-            '/../views/usuarios/Listar.php';
+            '/../views/usuarios/listar.php';
     }
 
     /*

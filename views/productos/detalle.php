@@ -1,18 +1,24 @@
 <?php
-// Se asume que $producto viene desde ProductoController->buscarPorCodigo() o ->editar()
+
+// Se asume que $producto viene desde ProductoController->buscarPorCodigo()
+// o ProductoController->editar()
+
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <title>Detalle del Producto</title>
 
-    <!-- CSS CORREGIDO -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <!-- CSS CORRECTO -->
+    <link rel="stylesheet" href="/tiendaAbarrotes/assets/css/styles.css">
 
     <style>
+
         .detalle-card{
             background:white;
             padding:40px;
@@ -78,17 +84,19 @@
         }
 
         @media (max-width:768px){
+
             .detalle-grid{
                 grid-template-columns:1fr;
             }
+
         }
+
     </style>
 
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
 
         <div class="navbar-brand">
@@ -96,8 +104,8 @@
             <span>Detalle del Producto</span>
         </div>
 
-        <!-- BOTÓN VOLVER CORREGIDO -->
-        <a href="../../controllers/ProductoController.php?action=listar"
+        <!-- VOLVER CORRECTO -->
+        <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=listar"
            class="btn-back">
 
             ← Volver
@@ -112,15 +120,21 @@
 
             <div class="detalle-header">
 
-                <div class="detalle-icon">📦</div>
+                <div class="detalle-icon">
+                    📦
+                </div>
 
                 <div class="detalle-title">
+
                     <?php echo htmlspecialchars($producto['nombre']); ?>
+
                 </div>
 
                 <div class="detalle-subtitle">
+
                     Código:
                     <?php echo htmlspecialchars($producto['codigo']); ?>
+
                 </div>
 
             </div>
@@ -132,7 +146,9 @@
                     <label>Categoría</label>
 
                     <div class="value">
+
                         <?php echo htmlspecialchars($producto['categoria']); ?>
+
                     </div>
 
                 </div>
@@ -142,7 +158,9 @@
                     <label>Proveedor</label>
 
                     <div class="value">
+
                         <?php echo htmlspecialchars($producto['proveedor_nombre'] ?? 'Sin asignar'); ?>
+
                     </div>
 
                 </div>
@@ -152,7 +170,9 @@
                     <label>Precio Compra</label>
 
                     <div class="value">
+
                         S/ <?php echo number_format($producto['precio_compra'], 2); ?>
+
                     </div>
 
                 </div>
@@ -162,7 +182,9 @@
                     <label>Precio Venta</label>
 
                     <div class="value">
+
                         S/ <?php echo number_format($producto['precio_venta'], 2); ?>
+
                     </div>
 
                 </div>
@@ -176,13 +198,17 @@
                         <?php if ($producto['stock'] < $producto['stock_minimo']): ?>
 
                             <span class="badge badge-warning">
+
                                 ⚠️ <?php echo (int)$producto['stock']; ?> unidades
+
                             </span>
 
                         <?php else: ?>
 
                             <span class="badge badge-success">
+
                                 ✅ <?php echo (int)$producto['stock']; ?> unidades
+
                             </span>
 
                         <?php endif; ?>
@@ -196,7 +222,9 @@
                     <label>Stock mínimo</label>
 
                     <div class="value">
+
                         <?php echo (int)$producto['stock_minimo']; ?> unidades
+
                     </div>
 
                 </div>
@@ -208,7 +236,10 @@
                         <label>Fecha de vencimiento</label>
 
                         <div class="value">
-                            📅 <?php echo date('d/m/Y', strtotime($producto['fecha_vencimiento'])); ?>
+
+                            📅
+                            <?php echo date('d/m/Y', strtotime($producto['fecha_vencimiento'])); ?>
+
                         </div>
 
                     </div>
@@ -220,8 +251,8 @@
             <!-- BOTONES -->
             <div style="display:flex; gap:10px; justify-content:center; margin-top:30px;">
 
-                <!-- EDITAR CORREGIDO -->
-                <a href="../../controllers/ProductoController.php?action=editar&id=<?php echo $producto['id']; ?>"
+                <!-- EDITAR -->
+                <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=editar&id=<?php echo $producto['id']; ?>"
                    class="btn-action btn-edit"
                    style="text-decoration:none; padding:12px 30px; border-radius:8px;">
 
@@ -229,8 +260,8 @@
 
                 </a>
 
-                <!-- VER TODOS CORREGIDO -->
-                <a href="../../controllers/ProductoController.php?action=listar"
+                <!-- VER TODOS -->
+                <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=listar"
                    class="btn-action"
                    style="text-decoration:none; padding:12px 30px; border-radius:8px;">
 
@@ -245,4 +276,5 @@
     </div>
 
 </body>
+
 </html>

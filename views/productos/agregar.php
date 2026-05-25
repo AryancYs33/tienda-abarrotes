@@ -15,10 +15,11 @@ $proveedores    = $proveedorModel->obtenerTodos();
 <head>
 
     <meta charset="UTF-8">
+
     <title>Nuevo Producto</title>
 
-    <!-- CSS CORREGIDO -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <!-- CSS CORRECTO -->
+    <link rel="stylesheet" href="/tiendaAbarrotes/assets/css/styles.css">
 
     <style>
 
@@ -114,7 +115,6 @@ $proveedores    = $proveedorModel->obtenerTodos();
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
 
         <div class="navbar-brand">
@@ -122,8 +122,8 @@ $proveedores    = $proveedorModel->obtenerTodos();
             <span>Agregar Producto</span>
         </div>
 
-        <!-- BOTÓN VOLVER CORREGIDO -->
-        <a href="../../controllers/ProductoController.php?action=listar"
+        <!-- VOLVER CORRECTO -->
+        <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=listar"
            class="btn-back">
 
             ← Volver
@@ -137,13 +137,15 @@ $proveedores    = $proveedorModel->obtenerTodos();
         <div class="form-card">
 
             <div class="form-header">
+
                 <h1>Nuevo Producto</h1>
+
             </div>
 
             <div class="form-body">
 
-                <!-- FORM CORREGIDO -->
-                <form action="../../controllers/ProductoController.php?action=crear"
+                <!-- FORM CORRECTO -->
+                <form action="/tiendaAbarrotes/controllers/ProductoController.php?action=crear"
                       method="POST">
 
                     <div class="form-row">
@@ -165,7 +167,9 @@ $proveedores    = $proveedorModel->obtenerTodos();
 
                             <select name="categoria" required>
 
-                                <option value="">Seleccione...</option>
+                                <option value="">
+                                    Seleccione...
+                                </option>
 
                                 <?php
 
@@ -269,7 +273,9 @@ $proveedores    = $proveedorModel->obtenerTodos();
 
                         <select name="proveedor_id">
 
-                            <option value="">Sin proveedor</option>
+                            <option value="">
+                                Sin proveedor
+                            </option>
 
                             <?php foreach ($proveedores as $prov): ?>
 
@@ -296,7 +302,7 @@ $proveedores    = $proveedorModel->obtenerTodos();
 
                     <div class="form-buttons">
 
-                        <a href="../../controllers/ProductoController.php?action=listar"
+                        <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=listar"
                            class="btn-secondary">
 
                             ❌ Cancelar
@@ -321,4 +327,5 @@ $proveedores    = $proveedorModel->obtenerTodos();
     </div>
 
 </body>
+
 </html>

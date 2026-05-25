@@ -1,23 +1,28 @@
 <?php
+
 require_once __DIR__ . '/../../models/Proveedor.php';
 
 $proveedorModel = new Proveedor();
 $proveedores    = $proveedorModel->obtenerTodos();
 
 // Se asume que $producto viene desde ProductoController->editar()
+
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <title>Editar Producto</title>
 
-    <!-- CSS CORREGIDO -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <!-- CSS CORRECTO -->
+    <link rel="stylesheet" href="/tiendaAbarrotes/assets/css/styles.css">
 
     <style>
+
         .form-card{
             background:white;
             border-radius:15px;
@@ -107,17 +112,19 @@ $proveedores    = $proveedorModel->obtenerTodos();
         }
 
         @media (max-width:768px){
+
             .form-row{
                 grid-template-columns:1fr;
             }
+
         }
+
     </style>
 
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
 
         <div class="navbar-brand">
@@ -125,8 +132,8 @@ $proveedores    = $proveedorModel->obtenerTodos();
             <span>Editar Producto</span>
         </div>
 
-        <!-- BOTÓN VOLVER CORREGIDO -->
-        <a href="../../controllers/ProductoController.php?action=listar"
+        <!-- VOLVER CORRECTO -->
+        <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=listar"
            class="btn-back">
 
             ← Volver
@@ -146,11 +153,14 @@ $proveedores    = $proveedorModel->obtenerTodos();
             <div class="form-body">
 
                 <div class="product-id">
-                    ID: #<?php echo htmlspecialchars($producto['id']); ?>
+
+                    ID:
+                    #<?php echo htmlspecialchars($producto['id']); ?>
+
                 </div>
 
-                <!-- FORM CORREGIDO -->
-                <form action="../../controllers/ProductoController.php?action=actualizar"
+                <!-- FORM CORRECTO -->
+                <form action="/tiendaAbarrotes/controllers/ProductoController.php?action=actualizar"
                       method="POST">
 
                     <input type="hidden"
@@ -177,6 +187,7 @@ $proveedores    = $proveedorModel->obtenerTodos();
                             <select name="categoria" required>
 
                                 <?php
+
                                 $cats = [
                                     'Granos',
                                     'Aceites',
@@ -192,7 +203,8 @@ $proveedores    = $proveedorModel->obtenerTodos();
 
                                 foreach ($cats as $c) {
 
-                                    $sel = ($c == $producto['categoria'])
+                                    $sel =
+                                        ($c == $producto['categoria'])
                                         ? 'selected'
                                         : '';
 
@@ -200,6 +212,7 @@ $proveedores    = $proveedorModel->obtenerTodos();
                                         . htmlspecialchars($c)
                                         . "</option>";
                                 }
+
                                 ?>
 
                             </select>
@@ -279,7 +292,9 @@ $proveedores    = $proveedorModel->obtenerTodos();
 
                         <select name="proveedor_id">
 
-                            <option value="">Sin proveedor</option>
+                            <option value="">
+                                Sin proveedor
+                            </option>
 
                             <?php foreach ($proveedores as $prov): ?>
 
@@ -312,15 +327,18 @@ $proveedores    = $proveedorModel->obtenerTodos();
 
                     <div class="form-buttons">
 
-                        <a href="../../controllers/ProductoController.php?action=listar"
+                        <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=listar"
                            class="btn-secondary">
 
-                            Cancelar
+                            ❌ Cancelar
 
                         </a>
 
-                        <button type="submit" class="btn-primary">
+                        <button type="submit"
+                                class="btn-primary">
+
                             💾 Actualizar Producto
+
                         </button>
 
                     </div>
@@ -334,4 +352,5 @@ $proveedores    = $proveedorModel->obtenerTodos();
     </div>
 
 </body>
+
 </html>

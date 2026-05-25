@@ -2,70 +2,94 @@
 $mensaje = $_SESSION['mensaje'] ?? '';
 $tipo_mensaje = $_SESSION['tipo_mensaje'] ?? '';
 unset($_SESSION['mensaje'], $_SESSION['tipo_mensaje']);
+
 $termino = $_GET['q'] ?? '';
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <title>Productos</title>
 
-    <!-- CSS CORREGIDO -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- CSS CORRECTO -->
+    <link rel="stylesheet" href="/tiendaAbarrotes/assets/css/styles.css">
+
 </head>
+
 <body>
 
     <nav class="navbar">
+
         <div class="navbar-brand">
             <span>📦</span>
             <span>Gestión de Productos</span>
         </div>
 
-        <!-- DASHBOARD CORREGIDO -->
-        <a href="../dashboard.php" class="btn-back">
+        <!-- DASHBOARD CORRECTO -->
+        <a href="/tiendaAbarrotes/views/dashboard.php"
+           class="btn-back">
+
             ← Dashboard
+
         </a>
+
     </nav>
 
     <div class="container">
 
         <div class="header-section">
+
             <h1>Listado de Productos</h1>
 
-            <div style="display:flex;gap:15px;">
+            <div style="display:flex; gap:15px;">
 
-                <!-- BUSCADOR CORREGIDO -->
-                <form action="../../controllers/ProductoController.php" method="GET" class="search-box">
-                    <input type="hidden" name="action" value="buscar">
+                <!-- BUSCADOR -->
+                <form action="/tiendaAbarrotes/controllers/ProductoController.php"
+                      method="GET"
+                      class="search-box">
+
+                    <input type="hidden"
+                           name="action"
+                           value="buscar">
 
                     <input type="text"
                            name="q"
                            placeholder="Buscar..."
-                           value="<?php echo htmlspecialchars($termino);?>">
+                           value="<?php echo htmlspecialchars($termino); ?>">
 
                     <button type="submit"
                             style="padding:10px 20px;background:#667eea;color:white;border:none;border-radius:8px;cursor:pointer;">
+
                         🔍 Buscar
+
                     </button>
+
                 </form>
 
-                <!-- NUEVO PRODUCTO CORREGIDO -->
-                <a href="../../controllers/ProductoController.php?action=agregar"
+                <!-- NUEVO PRODUCTO -->
+                <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=agregar"
                    class="btn-add">
+
                     ➕ Nuevo Producto
+
                 </a>
 
             </div>
+
         </div>
 
-        <!-- BÚSQUEDA POR CÓDIGO -->
+        <!-- BUSCAR POR CÓDIGO -->
         <div style="background:white;padding:20px;border-radius:10px;margin-bottom:20px;">
 
             <h3 style="margin-bottom:15px;">
                 🔍 Búsqueda por Código
             </h3>
 
-            <form action="../../controllers/ProductoController.php"
+            <form action="/tiendaAbarrotes/controllers/ProductoController.php"
                   method="GET"
                   style="display:flex;gap:10px;">
 
@@ -81,16 +105,24 @@ $termino = $_GET['q'] ?? '';
 
                 <button type="submit"
                         style="padding:12px 30px;background:#17a2b8;color:white;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">
+
                     📄 Buscar
+
                 </button>
 
             </form>
+
         </div>
 
+        <!-- MENSAJES -->
         <?php if (!empty($mensaje)): ?>
+
             <div class="alert alert-<?php echo htmlspecialchars($tipo_mensaje); ?>">
+
                 <?php echo htmlspecialchars($mensaje); ?>
+
             </div>
+
         <?php endif; ?>
 
         <div class="table-container">
@@ -100,7 +132,9 @@ $termino = $_GET['q'] ?? '';
                 <table>
 
                     <thead>
+
                         <tr>
+
                             <th>Código</th>
                             <th>Nombre</th>
                             <th>Categoría</th>
@@ -109,7 +143,9 @@ $termino = $_GET['q'] ?? '';
                             <th>P.Venta</th>
                             <th>Stock</th>
                             <th>Acciones</th>
+
                         </tr>
+
                     </thead>
 
                     <tbody>
@@ -119,9 +155,11 @@ $termino = $_GET['q'] ?? '';
                             <tr>
 
                                 <td>
+
                                     <strong>
                                         <?php echo htmlspecialchars($p['codigo']); ?>
                                     </strong>
+
                                 </td>
 
                                 <td>
@@ -129,21 +167,31 @@ $termino = $_GET['q'] ?? '';
                                 </td>
 
                                 <td>
+
                                     <span class="badge badge-success">
+
                                         <?php echo htmlspecialchars($p['categoria']); ?>
+
                                     </span>
+
                                 </td>
 
                                 <td>
+
                                     <?php echo htmlspecialchars($p['proveedor_nombre'] ?? 'Sin asignar'); ?>
+
                                 </td>
 
                                 <td>
+
                                     S/ <?php echo number_format($p['precio_compra'], 2); ?>
+
                                 </td>
 
                                 <td>
+
                                     S/ <?php echo number_format($p['precio_venta'], 2); ?>
+
                                 </td>
 
                                 <td>
@@ -151,7 +199,9 @@ $termino = $_GET['q'] ?? '';
                                     <?php if ($p['stock'] < $p['stock_minimo']): ?>
 
                                         <span class="badge badge-warning">
+
                                             ⚠️ <?php echo $p['stock']; ?>
+
                                         </span>
 
                                     <?php else: ?>
@@ -164,17 +214,21 @@ $termino = $_GET['q'] ?? '';
 
                                 <td>
 
-                                    <!-- EDITAR CORREGIDO -->
-                                    <a href="../../controllers/ProductoController.php?action=editar&id=<?php echo $p['id']; ?>"
+                                    <!-- EDITAR -->
+                                    <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=editar&id=<?php echo $p['id']; ?>"
                                        class="btn-action btn-edit">
+
                                         ✏️ Editar
+
                                     </a>
 
-                                    <!-- ELIMINAR CORREGIDO -->
-                                    <a href="../../controllers/ProductoController.php?action=eliminar&id=<?php echo $p['id']; ?>"
+                                    <!-- ELIMINAR -->
+                                    <a href="/tiendaAbarrotes/controllers/ProductoController.php?action=eliminar&id=<?php echo $p['id']; ?>"
                                        class="btn-action btn-delete"
-                                       onclick="return confirm('¿Eliminar?')">
+                                       onclick="return confirm('¿Eliminar producto?')">
+
                                         🗑️ Eliminar
+
                                     </a>
 
                                 </td>
@@ -206,4 +260,5 @@ $termino = $_GET['q'] ?? '';
     </div>
 
 </body>
+
 </html>
