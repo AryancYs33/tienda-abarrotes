@@ -1,7 +1,7 @@
 # La Canasta de Buena Vida — Sistema de Gestión de Almacén
 
-Trabajo Final · Curso **Ingeniería de Software III** (USIL) · Bloque FC-PREISF06B01
-Docente: Alfaro Gutiérrez, Gianny Romie · Grupo 1 · 2026
+Trabajo Final · Curso **Ingeniería de Software III** (USIL) 
+Docente: Alfaro Gutiérrez, Gianny Romie
 
 ## 📋 Descripción general
 
@@ -101,6 +101,8 @@ La complejidad ciclomática (168 total) se concentra en la capa de `controllers`
 | Análisis de calidad | SonarQube |
 | Documentación | SRS, diagramas UML, reporte formal APA |
 
+Link de la pagina:
+https://tiendaabarrotes.page.gd/tiendaAbarrotes/index.php?i=1   
 
 
 ## 👥 Integrantes (Grupo 1)
