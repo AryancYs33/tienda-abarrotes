@@ -105,13 +105,6 @@ Link de la pagina:
 https://tiendaabarrotes.page.gd/tiendaAbarrotes/index.php?i=1   
 
 
-## 👥 Integrantes (Grupo 1)
-
-| Código | Integrante |
-|---|---|
-| 2320397 | Cristobal Tito, Elmer Jesús |
-| 2310384 | **Abregu Balvin, Ariana Maricielo** |
-| 2320166 | Valdivia Correa, Angel Aldahir |
 
 ## 👤 Autora de este repositorio
 
